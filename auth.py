@@ -5,4 +5,6 @@ token = os.environ.get('TELEGRAM_API_TOKEN')
 print(token)
 req = requests.get(f"https://api.telegram.org/bot{token}/getMe")
 
-print(req.json())
+
+if __name__ == '__main__':
+    print(req.json())

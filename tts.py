@@ -28,5 +28,5 @@ def sendTTS(chat_id='509161525', text='Hello', token=token, lang='en', url=''): 
     req = requests.get(f"{params['api_url']}/bot{params['token']}/{params['action']}?chat_id={params['chat_id']}&audio={params['tts_url']}")
     return req.json()
 
-
-print(sendTTS(text="Tout est beau", token=token, lang="fr"))
+if __name__ == '__main__':
+    print(sendTTS(text="Tout est beau", token=token, lang="fr"))

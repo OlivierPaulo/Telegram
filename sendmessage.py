@@ -1,12 +1,10 @@
 import os
 import requests
-
-## Get Telegram API Token
-token = os.environ.get('TELEGRAM_API_TOKEN')
+import json
 
 
 ## Function to sendMessage to Telegram
-def sendMessage(chat_id='509161525', text='Hello', token=token):  ## Specify chat_id and text message
+def SendMessage(chat_id='509161525', text='Hello', token=None):  ## Specify chat_id and text message
     
     
     params = {
@@ -21,4 +19,7 @@ def sendMessage(chat_id='509161525', text='Hello', token=token):  ## Specify cha
     return req.json()
 
 
-print(sendMessage(text="This is \U0001F3C0", token=token)) ## \U0001F3C0 unicode value for Basketball ball
+if __name__ == '__main__':
+    ## Get Telegram API Token
+    token = os.environ.get('TELEGRAM_API_TOKEN')
+    print(SendMessage(text="This is \U0001F3C0", token=token)) ## \U0001F3C0 unicode value for Basketball ball
